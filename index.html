@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Nisha 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            animation: floatUp 8s linear infinite;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkleAnim 2s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes sparkleAnim {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-box.shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
+        .login-box h1 {
+            font-size: 2.5em;
+            color: #ff1493;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        .login-box p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #ff1493;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            font-size: 1em;
+            transition: all 0.3s;
+            background: #fff;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #ff1493;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        .error-message {
+            color: #ff1493;
+            background: #ffe4f0;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .love-page {
+            display: none;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1s ease;
+        }
+
+        .love-page h1 {
+            font-size: 3.5em;
+            color: #ff1493;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .love-page .message {
+            font-size: 1.8em;
+            color: #fff;
+            background: rgba(255, 105, 180, 0.3);
+            padding: 30px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .yes-btn {
+            padding: 20px 60px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+
+        .loading-text {
+            font-size: 1.8em;
+            color: #ff1493;
+            margin: 20px 0;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 20, 147, 0.3);
+            border-top: 5px solid #ff1493;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .confirmation {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .confirmation h1 {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
+        }
+
+        .video-section {
+            display: none;
+            margin-top: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255, 20, 147, 0.6);
+            border: 5px solid transparent;
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ffb6c1);
+            animation: glowBorder 3s ease-in-out infinite;
+        }
+
+        @keyframes glowBorder {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 20, 147, 0.6); }
+            50% { box-shadow: 0 0 60px rgba(255, 20, 147, 1); }
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 25px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .floating-love {
+            position: fixed;
+            font-size: 1.5em;
+            color: #ff1493;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.5);
+            pointer-events: none;
+            animation: floatUpText 3s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes floatUpText {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(-20px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-150px) scale(1.5);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .love-page h1 {
+                font-size: 2.5em;
+            }
+            .love-page .message {
+                font-size: 1.3em;
+            }
+            .yes-btn {
+                font-size: 1.4em;
+                padding: 15px 40px;
+            }
+            .confirmation h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="login-box" id="loginBox">
+            <h1>💕 Welcome 💕</h1>
+            <p>This is a special place 💖</p>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button class="btn" onclick="login()">Enter Our World ❤️</button>
+            <div class="error-message" id="errorMessage">
+                Oops 😜 This love space is only for Nisha and Suresh 💕
+            </div>
+        </div>
+
+        <div class="love-page" id="lovePage">
+            <h1 id="greeting">Hi Nisha 💖</h1>
+            <div class="message" id="questionMessage">
+                I have one very serious question for you…
+            </div>
+            <button class="yes-btn" id="yesBtn" onclick="answerYes()">Yes ❤️</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <div class="loading-text" id="loadingText">Analyzing feelings... 💭</div>
+        </div>
+
+        <div class="confirmation" id="confirmation">
+            <h1>I knew it 💕 You are stuck with me forever 😎</h1>
+                        <div class="confirmation" id="confirmation">
+            <h1>
+## 💖 **“ஏழு ஆண்டுகள்… இன்னும் அதே காதல்”**
+
+ஏழு ஆண்டுகள் கடந்தும்
+எங்கள் காதல் பழகவில்லை…
+அது தினமும் புதிதாகவே
+என் இதயத்தில் உதிக்கிறது.
+
+நேரம் எங்களை பிரிக்க முயன்றது,
+நிலைகள் எங்களை சோதித்தது,
+மனிதர்கள் எங்களை குறைத்தார்கள்,
+ஆனால் காதல் மட்டும்
+ஒரு அங்குலமும் பின்னோக்கி செல்லவில்லை.
+
+கண்ணீரில் நனைந்த இரவுகள் உண்டு,
+காத்திருப்பில் கழிந்த நாட்கள் உண்டு,
+சொல்லாமல் சுமந்த வேதனைகள் உண்டு,
+ஆனால் விடாமல் பிடித்த கை மட்டும்
+இன்னும் அதே வெப்பத்தில் இருக்கிறது.
+
+உன்னோடு பேசாமல் இருந்த நிமிடமும்
+என் இதயம் வேலை செய்ய மறந்தது…
+உன் பெயரை நினைத்தாலே
+என் உயிர் மீண்டும் துடிக்கத் தொடங்கியது.
+
+காதல் எங்களுக்கு மலர் பாதை இல்லை,
+முள் பாதை தான் கிடைத்தது…
+ஆனால் அந்த முள்ளும் கூட
+நம்மை பிரிக்க முடியாமல்
+நம்ம காதலை காத்தது.
+
+ஏழு வருடங்கள்…
+நேரம் மாறியது,
+நிலைகள் மாறியது,
+நாம மட்டும் மாறவில்லை…
+நாம் இன்னும்
+“நீயும் நானும்” தான்.
+
+நம்ம காதல் ஒரு கதை இல்ல,
+அது ஒரு போராட்டம்…
+ஆனா அந்த போராட்டத்துக்கு
+ஒவ்வொரு நாளும் வெற்றி தான்.
+
+உலகம் எதுவாக இருந்தாலும்,
+நேரம் எவ்வளவு சோதித்தாலும்,
+என் மனசு ஒரே ஒரு பெயரை தான் சொல்றது —
+**“நிஷா”** ❤️
+
+ஏழு ஆண்டுகள் காத்த காதல் இது…
+இது முடிவடையாது,
+இது திருமணமாய் மலரும் நாள் வரை
+நான் விட மாட்டேன்.
+
+ஏன்னா…
+நீ என் காதலி மட்டும் இல்ல,
+என் உயிரோட சேர்ந்து வந்த
+என் வாழ்நாள் முடிவு. 💍
+
+</h1>
+
+        </div>
+    </div>
+        </div>
+
+
+    <div class="footer">
+        Made with ❤️ by Suresh only for Nisha
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="romantic_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function createHearts() {
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = ['❤️', '💕', '💖', '💗', '💘'][Math.floor(Math.random() * 5)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 8000);
+            }, 800);
+        }
+
+        function createSparkles() {
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 2000);
+            }, 300);
+        }
+
+        createHearts();
+        createSparkles();
+
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const loginBox = document.getElementById('loginBox');
+            const errorMessage = document.getElementById('errorMessage');
+
+            if ((username.toLowerCase() === 'nisha' || username.toLowerCase() === 'suresh')
+                && password === 'Nisha_Suresh') {
+                loginBox.style.animation = 'fadeIn 0.5s reverse';
+                setTimeout(() => {
+                    loginBox.style.display = 'none';
+                    showLovePage();
+                }, 500);
+            } else {
+                errorMessage.style.display = 'block';
+                loginBox.classList.add('shake');
+                setTimeout(() => {
+                    loginBox.classList.remove('shake');
+                }, 500);
+            }
+        }
+
+        document.getElementById('password').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+
+        function showLovePage() {
+            const lovePage = document.getElementById('lovePage');
+            const questionMessage = document.getElementById('questionMessage');
+            const yesBtn = document.getElementById('yesBtn');
+
+            lovePage.style.display = 'block';
+            yesBtn.style.display = 'none';
+
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.3;
+            music.play().catch(() => {});
+
+            setTimeout(() => {
+                questionMessage.innerHTML = 'Do you love Suresh? 😌';
+                setTimeout(() => {
+                    yesBtn.style.display = 'inline-block';
+                    yesBtn.style.animation = 'fadeIn 0.8s ease';
+                    startButtonMagic();
+                }, 500);
+            }, 2000);
+        }
+
+        let buttonMagicActive = false;
+
+        function startButtonMagic() {
+            buttonMagicActive = true;
+            const yesBtn = document.getElementById('yesBtn');
+
+            document.addEventListener('mousemove', (e) => {
+                if (!buttonMagicActive) return;
+
+                const rect = yesBtn.getBoundingClientRect();
+                const btnCenterX = rect.left + rect.width / 2;
+                const btnCenterY = rect.top + rect.height / 2;
+
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+
+                const distance = Math.sqrt(
+                    Math.pow(mouseX - btnCenterX, 2) +
+                    Math.pow(mouseY - btnCenterY, 2)
+                );
+
+                if (distance > 100 && distance < 300) {
+                    const angle = Math.atan2(mouseY - btnCenterY, mouseX - btnCenterX);
+                    const moveDistance = 10;
+                    const newX = Math.cos(angle) * moveDistance;
+                    const newY = Math.sin(angle) * moveDistance;
+
+                    const currentTransform = yesBtn.style.transform || 'translate(0px, 0px)';
+                    const matches = currentTransform.match(/translate\((.+?)px,\s*(.+?)px\)/);
+                    const currentX = matches ? parseFloat(matches[1]) : 0;
+                    const currentY = matches ? parseFloat(matches[2]) : 0;
+
+                    yesBtn.style.transform = `translate(${currentX + newX}px, ${currentY + newY}px)`;
+                }
+            });
+        }
+
+        function answerYes() {
+            buttonMagicActive = false;
+            const lovePage = document.getElementById('lovePage');
+            const loading = document.getElementById('loading');
+
+            lovePage.style.display = 'none';
+            loading.style.display = 'block';
+
+            const messages = [
+                'Analyzing feelings... 💭',
+                'Detecting 100% love... 💘',
+                'Confirmed: Nisha is madly in love with Suresh 😍'
+            ];
+
+            let index = 0;
+            const loadingText = document.getElementById('loadingText');
+
+            const interval = setInterval(() => {
+                index++;
+                if (index < messages.length) {
+                    loadingText.innerHTML = messages[index];
+                } else {
+                    clearInterval(interval);
+                    showConfirmation();
+                }
+            }, 2000);
+        }
+
+        function showConfirmation() {
+            const loading = document.getElementById('loading');
+            const confirmation = document.getElementById('confirmation');
+            const videoSection = document.getElementById('videoSection');
+
+            loading.style.display = 'none';
+            confirmation.style.display = 'block';
+
+            setTimeout(() => {
+                videoSection.style.display = 'block';
+            }, 2000);
+        }
+
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+
+            const loveText = document.createElement('div');
+            loveText.className = 'floating-love';
+            loveText.innerHTML = 'I love you 💕';
+            loveText.style.left = e.clientX + 'px';
+            loveText.style.top = e.clientY + 'px';
+            document.body.appendChild(loveText);
+
+            setTimeout(() => loveText.remove(), 3000);
+        });
+    </script>
+</body>
+</html>
