@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Nisha 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,10 +13,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="15" font-size="15">❤️</text></svg>'), auto;
         }
 
         .background {
@@ -24,10 +26,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f, #ff9a9e);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 20s ease infinite;
             z-index: -2;
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
         }
 
         @keyframes gradientShift {
@@ -87,15 +101,41 @@
         }
 
         .login-box {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.15);
             padding: 50px 40px;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
-            max-width: 400px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3),
+                        inset 0 0 40px rgba(255, 255, 255, 0.1);
+            max-width: 450px;
             width: 100%;
             text-align: center;
-            backdrop-filter: blur(10px);
-            animation: fadeIn 0.8s ease;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease, float 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes fadeIn {
@@ -114,16 +154,33 @@
         }
 
         .login-box h1 {
-            font-size: 2.5em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+            filter: drop-shadow(2px 2px 4px rgba(255, 105, 180, 0.5));
+            animation: glow 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 20, 147, 1)); }
         }
 
         .login-box p {
-            color: #666;
+            color: #fff;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .input-group {
@@ -133,56 +190,98 @@
 
         .input-group label {
             display: block;
-            color: #ff1493;
+            color: #fff;
             font-weight: 600;
             margin-bottom: 8px;
             font-size: 1.1em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .input-group input {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #ffb6c1;
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             font-size: 1em;
             transition: all 0.3s;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .input-group input:focus {
             outline: none;
-            border-color: #ff1493;
-            box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
         }
 
         .btn {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 15px;
             font-size: 1.2em;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .error-message {
-            color: #ff1493;
-            background: #ffe4f0;
+            color: #fff;
+            background: rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(10px);
             padding: 15px;
             border-radius: 15px;
             margin-top: 20px;
             font-size: 1.1em;
             display: none;
             animation: fadeIn 0.5s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .love-page {
@@ -194,11 +293,21 @@
         }
 
         .love-page h1 {
-            font-size: 3.5em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientText 3s ease infinite, pulse 2s ease-in-out infinite;
             margin-bottom: 30px;
-            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
-            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+        }
+
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         @keyframes pulse {
@@ -207,32 +316,59 @@
         }
 
         .love-page .message {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #fff;
-            background: rgba(255, 105, 180, 0.3);
-            padding: 30px;
-            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 30px;
             margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px) saturate(180%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.1);
+            animation: float 4s ease-in-out infinite;
+            font-weight: 400;
         }
 
         .yes-btn {
-            padding: 20px 60px;
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            padding: 25px 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
-            border: none;
-            border-radius: 20px;
-            font-size: 1.8em;
-            font-weight: 600;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 2em;
+            font-weight: 700;
             cursor: pointer;
             position: relative;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            overflow: hidden;
+        }
+
+        .yes-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .yes-btn:hover::before {
+            left: 100%;
         }
 
         .yes-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(2deg);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.8), 0 0 60px rgba(255, 20, 147, 0.6);
+        }
+
+        .yes-btn:active {
+            transform: scale(1.05);
         }
 
         .loading {
@@ -271,10 +407,43 @@
         }
 
         .confirmation h1 {
-            font-size: 3em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 30px;
-            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .tamil-poem {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            padding: 40px;
+            border-radius: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .tamil-poem h2 {
+            color: #ffd700;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tamil-poem p {
+            color: #fff;
+            font-size: 1.3em;
+            line-height: 2;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            font-weight: 300;
         }
 
         .video-section {
