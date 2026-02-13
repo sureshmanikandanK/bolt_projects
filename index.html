@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Nisha 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,10 +13,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="15" font-size="15">❤️</text></svg>'), auto;
         }
 
         .background {
@@ -24,10 +26,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f, #ff9a9e);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 20s ease infinite;
             z-index: -2;
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
         }
 
         @keyframes gradientShift {
@@ -87,15 +101,41 @@
         }
 
         .login-box {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.15);
             padding: 50px 40px;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
-            max-width: 400px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3),
+                        inset 0 0 40px rgba(255, 255, 255, 0.1);
+            max-width: 450px;
             width: 100%;
             text-align: center;
-            backdrop-filter: blur(10px);
-            animation: fadeIn 0.8s ease;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease, float 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes fadeIn {
@@ -114,16 +154,33 @@
         }
 
         .login-box h1 {
-            font-size: 2.5em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+            filter: drop-shadow(2px 2px 4px rgba(255, 105, 180, 0.5));
+            animation: glow 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 20, 147, 1)); }
         }
 
         .login-box p {
-            color: #666;
+            color: #fff;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .input-group {
@@ -133,56 +190,98 @@
 
         .input-group label {
             display: block;
-            color: #ff1493;
+            color: #fff;
             font-weight: 600;
             margin-bottom: 8px;
             font-size: 1.1em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .input-group input {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #ffb6c1;
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             font-size: 1em;
             transition: all 0.3s;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .input-group input:focus {
             outline: none;
-            border-color: #ff1493;
-            box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
         }
 
         .btn {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 15px;
             font-size: 1.2em;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .error-message {
-            color: #ff1493;
-            background: #ffe4f0;
+            color: #fff;
+            background: rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(10px);
             padding: 15px;
             border-radius: 15px;
             margin-top: 20px;
             font-size: 1.1em;
             display: none;
             animation: fadeIn 0.5s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .love-page {
@@ -194,11 +293,21 @@
         }
 
         .love-page h1 {
-            font-size: 3.5em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientText 3s ease infinite, pulse 2s ease-in-out infinite;
             margin-bottom: 30px;
-            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
-            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+        }
+
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         @keyframes pulse {
@@ -207,32 +316,59 @@
         }
 
         .love-page .message {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #fff;
-            background: rgba(255, 105, 180, 0.3);
-            padding: 30px;
-            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 30px;
             margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px) saturate(180%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.1);
+            animation: float 4s ease-in-out infinite;
+            font-weight: 400;
         }
 
         .yes-btn {
-            padding: 20px 60px;
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            padding: 25px 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
-            border: none;
-            border-radius: 20px;
-            font-size: 1.8em;
-            font-weight: 600;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 2em;
+            font-weight: 700;
             cursor: pointer;
             position: relative;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            overflow: hidden;
+        }
+
+        .yes-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .yes-btn:hover::before {
+            left: 100%;
         }
 
         .yes-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(2deg);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.8), 0 0 60px rgba(255, 20, 147, 0.6);
+        }
+
+        .yes-btn:active {
+            transform: scale(1.05);
         }
 
         .loading {
@@ -268,13 +404,120 @@
             display: none;
             text-align: center;
             animation: fadeIn 1s ease;
+            max-width: 1000px;
+            width: 100%;
         }
 
         .confirmation h1 {
-            font-size: 3em;
-            color: #ff1493;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ff1493, #ffd700, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 30px;
-            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            height: 450px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            font-size: 2em;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev { left: 20px; }
+        .carousel-btn.next { right: 20px; }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #ff1493;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
+        }
+
+        .tamil-poem {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            padding: 40px;
+            border-radius: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .tamil-poem h2 {
+            color: #ffd700;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tamil-poem p {
+            color: #fff;
+            font-size: 1.3em;
+            line-height: 2;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            font-weight: 300;
         }
 
         .video-section {
@@ -396,69 +639,31 @@
 
         <div class="confirmation" id="confirmation">
             <h1>I knew it 💕 You are stuck with me forever 😎</h1>
-                        <div class="confirmation" id="confirmation">
-            <h1>
-## 💖 **“ஏழு ஆண்டுகள்… இன்னும் அதே காதல்”**
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <img src="images/shared image.jpg" alt="Memory 1">
+                    <img src="images/shared image (1).jpg" alt="Memory 2">
+                    <img src="images/shared image (2).jpg" alt="Memory 3">
+                    <img src="images/shared image (3).jpg" alt="Memory 4">
+                    <img src="images/shared image (4).jpg" alt="Memory 5">
+                    <img src="images/shared image (5).jpg" alt="Memory 6">
+                    <img src="images/shared image (6).jpg" alt="Memory 7">
+                    <img src="images/shared image (7).jpg" alt="Memory 8">
+                    <img src="images/shared image (8).jpg" alt="Memory 9">
+                </div>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
 
-ஏழு ஆண்டுகள் கடந்தும்
-எங்கள் காதல் பழகவில்லை…
-அது தினமும் புதிதாகவே
-என் இதயத்தில் உதிக்கிறது.
-
-நேரம் எங்களை பிரிக்க முயன்றது,
-நிலைகள் எங்களை சோதித்தது,
-மனிதர்கள் எங்களை குறைத்தார்கள்,
-ஆனால் காதல் மட்டும்
-ஒரு அங்குலமும் பின்னோக்கி செல்லவில்லை.
-
-கண்ணீரில் நனைந்த இரவுகள் உண்டு,
-காத்திருப்பில் கழிந்த நாட்கள் உண்டு,
-சொல்லாமல் சுமந்த வேதனைகள் உண்டு,
-ஆனால் விடாமல் பிடித்த கை மட்டும்
-இன்னும் அதே வெப்பத்தில் இருக்கிறது.
-
-உன்னோடு பேசாமல் இருந்த நிமிடமும்
-என் இதயம் வேலை செய்ய மறந்தது…
-உன் பெயரை நினைத்தாலே
-என் உயிர் மீண்டும் துடிக்கத் தொடங்கியது.
-
-காதல் எங்களுக்கு மலர் பாதை இல்லை,
-முள் பாதை தான் கிடைத்தது…
-ஆனால் அந்த முள்ளும் கூட
-நம்மை பிரிக்க முடியாமல்
-நம்ம காதலை காத்தது.
-
-ஏழு வருடங்கள்…
-நேரம் மாறியது,
-நிலைகள் மாறியது,
-நாம மட்டும் மாறவில்லை…
-நாம் இன்னும்
-“நீயும் நானும்” தான்.
-
-நம்ம காதல் ஒரு கதை இல்ல,
-அது ஒரு போராட்டம்…
-ஆனா அந்த போராட்டத்துக்கு
-ஒவ்வொரு நாளும் வெற்றி தான்.
-
-உலகம் எதுவாக இருந்தாலும்,
-நேரம் எவ்வளவு சோதித்தாலும்,
-என் மனசு ஒரே ஒரு பெயரை தான் சொல்றது —
-**“நிஷா”** ❤️
-
-ஏழு ஆண்டுகள் காத்த காதல் இது…
-இது முடிவடையாது,
-இது திருமணமாய் மலரும் நாள் வரை
-நான் விட மாட்டேன்.
-
-ஏன்னா…
-நீ என் காதலி மட்டும் இல்ல,
-என் உயிரோட சேர்ந்து வந்த
-என் வாழ்நாள் முடிவு. 💍
-
-</h1>
-
-        </div>
-    </div>
+            <div class="tamil-poem">
+                <h2>💖 Our Love Story 💖</h2>
+                <p>Every moment with you is a treasure 💎</p>
+                <p>Every smile of yours lights up my world 🌟</p>
+                <p>Together forever, that's our promise 💕</p>
+            </div>
         </div>
 
 
@@ -637,6 +842,53 @@
 
             setTimeout(() => loveText.remove(), 3000);
         });
+
+        let currentSlide = 0;
+        const totalSlides = 9;
+
+        function initCarousel() {
+            const dotsContainer = document.getElementById('carouselDots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+            autoPlayCarousel();
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function autoPlayCarousel() {
+            setInterval(() => {
+                moveCarousel(1);
+            }, 4000);
+        }
+
+        setTimeout(() => {
+            initCarousel();
+        }, 1000);
     </script>
 </body>
 </html>
