@@ -404,6 +404,8 @@
             display: none;
             text-align: center;
             animation: fadeIn 1s ease;
+            max-width: 1000px;
+            width: 100%;
         }
 
         .confirmation h1 {
@@ -416,6 +418,78 @@
             margin-bottom: 30px;
             filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
             animation: pulse 2s ease-in-out infinite;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            height: 450px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            font-size: 2em;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev { left: 20px; }
+        .carousel-btn.next { right: 20px; }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #ff1493;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
         }
 
         .tamil-poem {
@@ -565,69 +639,31 @@
 
         <div class="confirmation" id="confirmation">
             <h1>I knew it 💕 You are stuck with me forever 😎</h1>
-                        <div class="confirmation" id="confirmation">
-            <h1>
-## 💖 **“ஏழு ஆண்டுகள்… இன்னும் அதே காதல்”**
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <img src="images/shared image.jpg" alt="Memory 1">
+                    <img src="images/shared image (1).jpg" alt="Memory 2">
+                    <img src="images/shared image (2).jpg" alt="Memory 3">
+                    <img src="images/shared image (3).jpg" alt="Memory 4">
+                    <img src="images/shared image (4).jpg" alt="Memory 5">
+                    <img src="images/shared image (5).jpg" alt="Memory 6">
+                    <img src="images/shared image (6).jpg" alt="Memory 7">
+                    <img src="images/shared image (7).jpg" alt="Memory 8">
+                    <img src="images/shared image (8).jpg" alt="Memory 9">
+                </div>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
 
-ஏழு ஆண்டுகள் கடந்தும்
-எங்கள் காதல் பழகவில்லை…
-அது தினமும் புதிதாகவே
-என் இதயத்தில் உதிக்கிறது.
-
-நேரம் எங்களை பிரிக்க முயன்றது,
-நிலைகள் எங்களை சோதித்தது,
-மனிதர்கள் எங்களை குறைத்தார்கள்,
-ஆனால் காதல் மட்டும்
-ஒரு அங்குலமும் பின்னோக்கி செல்லவில்லை.
-
-கண்ணீரில் நனைந்த இரவுகள் உண்டு,
-காத்திருப்பில் கழிந்த நாட்கள் உண்டு,
-சொல்லாமல் சுமந்த வேதனைகள் உண்டு,
-ஆனால் விடாமல் பிடித்த கை மட்டும்
-இன்னும் அதே வெப்பத்தில் இருக்கிறது.
-
-உன்னோடு பேசாமல் இருந்த நிமிடமும்
-என் இதயம் வேலை செய்ய மறந்தது…
-உன் பெயரை நினைத்தாலே
-என் உயிர் மீண்டும் துடிக்கத் தொடங்கியது.
-
-காதல் எங்களுக்கு மலர் பாதை இல்லை,
-முள் பாதை தான் கிடைத்தது…
-ஆனால் அந்த முள்ளும் கூட
-நம்மை பிரிக்க முடியாமல்
-நம்ம காதலை காத்தது.
-
-ஏழு வருடங்கள்…
-நேரம் மாறியது,
-நிலைகள் மாறியது,
-நாம மட்டும் மாறவில்லை…
-நாம் இன்னும்
-“நீயும் நானும்” தான்.
-
-நம்ம காதல் ஒரு கதை இல்ல,
-அது ஒரு போராட்டம்…
-ஆனா அந்த போராட்டத்துக்கு
-ஒவ்வொரு நாளும் வெற்றி தான்.
-
-உலகம் எதுவாக இருந்தாலும்,
-நேரம் எவ்வளவு சோதித்தாலும்,
-என் மனசு ஒரே ஒரு பெயரை தான் சொல்றது —
-**“நிஷா”** ❤️
-
-ஏழு ஆண்டுகள் காத்த காதல் இது…
-இது முடிவடையாது,
-இது திருமணமாய் மலரும் நாள் வரை
-நான் விட மாட்டேன்.
-
-ஏன்னா…
-நீ என் காதலி மட்டும் இல்ல,
-என் உயிரோட சேர்ந்து வந்த
-என் வாழ்நாள் முடிவு. 💍
-
-</h1>
-
-        </div>
-    </div>
+            <div class="tamil-poem">
+                <h2>💖 Our Love Story 💖</h2>
+                <p>Every moment with you is a treasure 💎</p>
+                <p>Every smile of yours lights up my world 🌟</p>
+                <p>Together forever, that's our promise 💕</p>
+            </div>
         </div>
 
 
@@ -806,6 +842,53 @@
 
             setTimeout(() => loveText.remove(), 3000);
         });
+
+        let currentSlide = 0;
+        const totalSlides = 9;
+
+        function initCarousel() {
+            const dotsContainer = document.getElementById('carouselDots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+            autoPlayCarousel();
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function autoPlayCarousel() {
+            setInterval(() => {
+                moveCarousel(1);
+            }, 4000);
+        }
+
+        setTimeout(() => {
+            initCarousel();
+        }, 1000);
     </script>
 </body>
 </html>
