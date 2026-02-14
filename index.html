@@ -26,7 +26,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background: linear-gradient(135deg, #ff0844 0%, #ffb199 25%, #ff6b9d 50%, #c94b4b 75%, #ff1744 100%);
             background-size: 400% 400%;
             animation: gradientShift 20s ease infinite;
             z-index: -2;
@@ -39,8 +39,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.3) 0%, transparent 50%),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="50" font-size="40" opacity="0.1">❤️</text><text x="60" y="80" font-size="30" opacity="0.1">💕</text></svg>');
             animation: pulse 8s ease-in-out infinite;
         }
 
@@ -101,16 +102,16 @@
         }
 
         .login-box {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             padding: 50px 40px;
             border-radius: 30px;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3),
-                        inset 0 0 40px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 80px rgba(255, 20, 147, 0.4),
+                        inset 0 0 40px rgba(255, 192, 203, 0.2);
             max-width: 450px;
             width: 100%;
             text-align: center;
             backdrop-filter: blur(20px) saturate(180%);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 192, 203, 0.4);
             animation: fadeIn 0.8s ease, float 6s ease-in-out infinite;
             position: relative;
             overflow: hidden;
@@ -123,7 +124,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 192, 203, 0.3), transparent);
             transform: rotate(45deg);
             animation: shimmer 3s infinite;
         }
@@ -227,7 +228,7 @@
         .btn {
             width: 100%;
             padding: 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff1744 0%, #ff6b9d 100%);
             color: white;
             border: none;
             border-radius: 15px;
@@ -236,7 +237,7 @@
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-top: 10px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -262,7 +263,7 @@
 
         .btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.7);
         }
 
         .btn:active {
@@ -318,30 +319,30 @@
         .love-page .message {
             font-size: 2em;
             color: #fff;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 192, 203, 0.25);
             padding: 40px;
             border-radius: 30px;
             margin-bottom: 40px;
             backdrop-filter: blur(20px) saturate(180%);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 192, 203, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4), inset 0 0 40px rgba(255, 192, 203, 0.2);
             animation: float 4s ease-in-out infinite;
             font-weight: 400;
         }
 
         .yes-btn {
             padding: 25px 70px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(135deg, #ff0844 0%, #ff1744 50%, #ff6b9d 100%);
             color: white;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 192, 203, 0.5);
             border-radius: 50px;
             font-size: 2em;
             font-weight: 700;
             cursor: pointer;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 15px 50px rgba(255, 20, 147, 0.7), 0 0 40px rgba(255, 105, 180, 0.5);
             text-transform: uppercase;
             letter-spacing: 2px;
             overflow: hidden;
@@ -364,11 +365,36 @@
 
         .yes-btn:hover {
             transform: scale(1.15) rotate(2deg);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.8), 0 0 60px rgba(255, 20, 147, 0.6);
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.9), 0 0 60px rgba(255, 105, 180, 0.7);
         }
 
         .yes-btn:active {
             transform: scale(1.05);
+        }
+
+        .no-btn {
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #666 0%, #999 100%);
+            color: white;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 1.8em;
+            font-weight: 700;
+            cursor: pointer;
+            position: fixed;
+            transition: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            min-height: 150px;
         }
 
         .loading {
@@ -428,8 +454,9 @@
             margin: 40px auto;
             overflow: hidden;
             border-radius: 30px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 80px rgba(255, 20, 147, 0.5);
+            background: rgba(255, 192, 203, 0.1);
+            border: 3px solid rgba(255, 192, 203, 0.3);
         }
 
         .carousel {
@@ -450,10 +477,10 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 192, 203, 0.4);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            color: white;
+            border: 2px solid rgba(255, 192, 203, 0.6);
+            color: #ff1744;
             font-size: 2em;
             padding: 15px 20px;
             cursor: pointer;
@@ -463,8 +490,9 @@
         }
 
         .carousel-btn:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 192, 203, 0.7);
             transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
         }
 
         .carousel-btn.prev { left: 20px; }
@@ -492,15 +520,44 @@
             box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
         }
 
+        .voice-message {
+            background: rgba(255, 192, 203, 0.25);
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px solid rgba(255, 192, 203, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4);
+            text-align: center;
+        }
+
+        .voice-message h3 {
+            color: #ffd700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-top: 15px;
+            outline: none;
+        }
+
+        .audio-player::-webkit-media-controls-panel {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         .tamil-poem {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 192, 203, 0.25);
             backdrop-filter: blur(20px) saturate(180%);
             padding: 40px;
             border-radius: 30px;
             margin: 30px auto;
             max-width: 800px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 192, 203, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4);
             animation: fadeIn 1.5s ease;
         }
 
@@ -629,7 +686,10 @@
             <div class="message" id="questionMessage">
                 I have one very serious question for you…
             </div>
-            <button class="yes-btn" id="yesBtn" onclick="answerYes()">Yes ❤️</button>
+            <div class="button-container">
+                <button class="yes-btn" id="yesBtn" onclick="answerYes()">Yes ❤️</button>
+                <button class="no-btn" id="noBtn">No 💔</button>
+            </div>
         </div>
 
         <div class="loading" id="loading">
@@ -657,6 +717,14 @@
             </div>
             
             <div class="carousel-dots" id="carouselDots"></div>
+
+            <div class="voice-message">
+                <h3>💌 A Special Message For You 💌</h3>
+                <audio class="audio-player" controls>
+                    <source src="Standard recording 2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="tamil-poem">
                 <h2>💖 Our Love Story 💖</h2>
@@ -756,36 +824,33 @@
 
         function startButtonMagic() {
             buttonMagicActive = true;
+            const noBtn = document.getElementById('noBtn');
             const yesBtn = document.getElementById('yesBtn');
+            const yesRect = yesBtn.getBoundingClientRect();
+            
+            noBtn.style.left = (yesRect.right + 50) + 'px';
+            noBtn.style.top = yesRect.top + 'px';
 
             document.addEventListener('mousemove', (e) => {
                 if (!buttonMagicActive) return;
 
-                const rect = yesBtn.getBoundingClientRect();
-                const btnCenterX = rect.left + rect.width / 2;
-                const btnCenterY = rect.top + rect.height / 2;
-
                 const mouseX = e.clientX;
                 const mouseY = e.clientY;
+                
+                const oppositeX = window.innerWidth - mouseX;
+                const oppositeY = window.innerHeight - mouseY;
+                
+                const btnWidth = 200;
+                const btnHeight = 80;
+                
+                let finalX = oppositeX - btnWidth / 2;
+                let finalY = oppositeY - btnHeight / 2;
+                
+                finalX = Math.max(20, Math.min(finalX, window.innerWidth - btnWidth - 20));
+                finalY = Math.max(20, Math.min(finalY, window.innerHeight - btnHeight - 20));
 
-                const distance = Math.sqrt(
-                    Math.pow(mouseX - btnCenterX, 2) +
-                    Math.pow(mouseY - btnCenterY, 2)
-                );
-
-                if (distance > 100 && distance < 300) {
-                    const angle = Math.atan2(mouseY - btnCenterY, mouseX - btnCenterX);
-                    const moveDistance = 10;
-                    const newX = Math.cos(angle) * moveDistance;
-                    const newY = Math.sin(angle) * moveDistance;
-
-                    const currentTransform = yesBtn.style.transform || 'translate(0px, 0px)';
-                    const matches = currentTransform.match(/translate\((.+?)px,\s*(.+?)px\)/);
-                    const currentX = matches ? parseFloat(matches[1]) : 0;
-                    const currentY = matches ? parseFloat(matches[2]) : 0;
-
-                    yesBtn.style.transform = `translate(${currentX + newX}px, ${currentY + newY}px)`;
-                }
+                noBtn.style.left = finalX + 'px';
+                noBtn.style.top = finalY + 'px';
             });
         }
 
